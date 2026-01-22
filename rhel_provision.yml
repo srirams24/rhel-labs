@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update system packages
+      dnf:
+        name: '*'
+        state: latest
+
+    - name: Set hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
+
+    - name: Reboot a slow machine that might have lots of updates to apply
+      ansible.builtin.reboot:
+        reboot_timeout: 180
+        msg:
+
+    - name: Install neccessary Packages
+      dnf:
+        name: 
+          - vim
+          - bash-completion
+        state: latest
+
