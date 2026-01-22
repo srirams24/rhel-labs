@@ -44,7 +44,8 @@
    - Clone the repository required for your lab setup:
 
      ```bash
-     git clone <repository-url>
+     git clone https://github.com/srirams24/rhel-labs.git
+     cd rhel-labs
      ```
 
 5. **Prepare the Environment**
